@@ -1,2 +1,9 @@
-# Dummy content for variables.tf
-# This file was generated as part of the project structure setup.
+variable "project_name" {
+type = string
+description = "Project name for resource naming"
+}
+variable "aws_region" {
+type = string
+description = "AWS region"
+default = "us-west-1"
+}
