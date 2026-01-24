@@ -1,25 +1,6 @@
-variable "telemetry_table_name" {
-  description = "Name of the table storing device telemetry"
+variable "project_name" {
+  description = "Project name prefix"
   type        = string
-  default     = "device_telemetry"
-}
-
-variable "state_table_name" {
-  description = "Name of the table storing device state/shadow data"
-  type        = string
-  default     = "device_state"
-}
-
-variable "alerts_table_name" {
-  description = "Name of the table storing alert logs"
-  type        = string
-  default     = "alert_log"
-}
-
-variable "commands_table_name" {
-  description = "Name of the table storing command logs"
-  type        = string
-  default     = "command_log"
 }
 
 variable "environment" {
@@ -35,3 +16,8 @@ variable "tags" {
     Project = "Fleexa"
   }
 }
+
+# Optional: If you want to allow overriding table names, keep these.
+# Otherwise, you can remove them since main.tf is now using 
+# "${var.project_name}-${var.environment}-..." for naming.
+# If you keep them, you are currently IGNORING them in your main.tf implementation.
