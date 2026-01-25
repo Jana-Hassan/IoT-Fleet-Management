@@ -1,2 +1,11 @@
-# Dummy content for main.tf
-# This file was generated as part of the project structure setup.
+module "iot_core" {
+    source = "./modules/iot_core"
+    project_name = var.project_name
+    aws_region = var.aws_region
+}
+
+module "dynamodb" {
+  source       = "./modules/dynamodb"
+  project_name = var.project_name   
+  environment  = var.environment    
+}
